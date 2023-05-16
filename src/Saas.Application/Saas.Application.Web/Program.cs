@@ -192,7 +192,7 @@ void InitializeDevEnvironment()
 
 void InitializeProdEnvironment()
 {
-    // For procution environment, we'll configured Managed Identities for managing access Azure App Services
+    // For production environment, we'll configured Managed Identities for managing access Azure App Services
     // and Key Vault. The Azure App Services endpoint is stored in an environment variable for the web app.
 
     logger.LogInformation($"Is Production.");
