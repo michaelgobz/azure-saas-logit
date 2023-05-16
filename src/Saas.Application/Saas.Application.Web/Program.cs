@@ -163,7 +163,7 @@ void InitializeDevEnvironment()
 {
     // IMPORTANT
     // The current version.
-    // Must corresspond exactly to the version string of our deployment as specificed in the deployment config.json.
+    // Must correspond exactly to the version string of our deployment as specified in the deployment config.json.
 
     logger.LogInformation($"Is Development.");
 
