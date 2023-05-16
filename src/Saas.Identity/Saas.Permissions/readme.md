@@ -6,7 +6,7 @@ Once deployed, this service is a web API exposing endpoints to perform CRUD oper
 
 ## Overview
 
-Within this folder you will find two subfolders:
+Within this folder you will find two sub-folders:
 
 - **Saas.Permissions.Service** - the C# project for the API
 - **deployment** - a set of tools for deploying the API for production
@@ -20,7 +20,7 @@ The service depends on:
 
 ## Provisioning the API
 
-To work with the SaaS Permissions API it must first be provisions to your Azure ASDK resource group. This is true even if you initially is planning to run the API in your local development environment. 
+To work with the SaaS Permissions API it must first be provisions to your Azure ASDK resource group. This is true even if you initially is planning to run the API in your local development environment.
 
 The provisioning step ensure that configuration and settings to be correctly added to your Azure App Configuration store and readies the API for later deployment to Azure.
 
@@ -29,6 +29,7 @@ Provisioning is an easy two step process:
 1. Navigate to the sub folder `deployment`.
 
 2. Run these commands:
+
    ```bash
    sudo chmod +x setup.sh
    ./setup.sh
@@ -49,7 +50,7 @@ To run the API locally, you must have the following installed on your developer 
 
 > *Tip*: .NET 7.0 and ASP.NET Core 7.0 can also be installed as part of the latest version Microsoft Visual Studio 2022.
 
-###  Configuration, settings and secrets when running locally
+### Configuration, settings and secrets when running locally
 
 To manage settings securely and efficiently, settings are being stored in [Azure App Configuration](https://learn.microsoft.com/en-us/azure/azure-app-configuration/overview), while secrets and certificates are being stored in [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/overview). Furthermore, secrets are represented with a reference (an URI) in Azure App Configuration pointing to the actual secret, which is kept safely and securely in Azure Key Vault. 
 
@@ -208,15 +209,15 @@ What if we want to *debug* the web app running in Azure instead? This section is
 
 ### Speeding up the inner deployment loop with  GitHub Actions
 
-For testing, debugging and general development, we generally want to do as much work locally as possible, but eventually we also will need to test and understand how the web app runs in the Azure environment as well. There are different way for doing this. We want to pick the a process that a) is as close to production, while b) speeds up our *inner dev loop*. [Credits to @forrestbrazeal at Good Tech Things for humorously illustrating why](https://www.goodtechthings.com/pipeline/) an expedited inner loop is so important. 
+For testing, debugging and general development, we generally want to do as much work locally as possible, but eventually we also will need to test and understand how the web app runs in the Azure environment as well. There are different way for doing this. We want to pick the a process that a) is as close to production, while b) speeds up our *inner dev loop*. [Credits to @forrestbrazeal at Good Tech Things for humorously illustrating why](https://www.goodtechthings.com/pipeline/) an expedited inner loop is so important.
 
 ![Pipeline](https://www.goodtechthings.com/content/images/size/w1140/2022/12/Pipeline.png)
 
-Chances are that we don't want to push every little change or test etc. to the *main* branch every time we test, troubleshoot etc. Hence, the first we must do is to create a separate *dev* branch. 
+Chances are that we don't want to push every little change or test etc. to the *main* branch every time we test, troubleshoot etc. Hence, the first we must do is to create a separate *dev* branch.
 
 #### Introducing Act
 
-Working from the *dev* branch means that we need a different GitHub Action that pulls updates from the *dev* branch rather than the *main* branch. We could easily create a 2nd GitHub Action for this, but here we suggest to do something different. Specifically, use [Act](https://github.com/nektos/act). 
+Working from the *dev* branch means that we need a different GitHub Action that pulls updates from the *dev* branch rather than the *main* branch. We could easily create a 2nd GitHub Action for this, but here we suggest to do something different. Specifically, use [Act](https://github.com/nektos/act).
 
 Act allows us to run our GitHub Action locally, thus giving us much better speed, control, and insights into what's going on. All of which being exactly what we're looking for when doing debugging, testing and development work.
 
@@ -230,7 +231,7 @@ Like our own deployment script, Act uses a container to run GitHub Actions local
 
 Here are the steps for getting up and running with Act for doing local deployment:
 
-1. Go to the sub-directory: 
+1. Go to the sub-directory:
 
    ```bash 
    .../src/Saas.Identity/Saas.Permissions/deployment/act

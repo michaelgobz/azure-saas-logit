@@ -1,23 +1,23 @@
 # SaaS Admin Service API
 
-The SaaS Admin Service is an API that is reponsible for tenant management operations. 
+The SaaS Admin Service is an API that is responsible for tenant management operations.
 
 This project hosts a service API which serves as a gateway to administrate the SaaS ecosystem of Tenants.
 
 ## Overview
 
-Within this folder you will find two subfolders:
+Within this folder you will find two sub-folders:
 
 - **Saas.Permissions.Service** - the C# project for the API
 - **deployment** - a set of tools for deploying the API for production
-  - The sub-subfolder **[act](./deployment/act)** is for deploying the API for remote debugging 
+  - The sub-subfolder **[act](./deployment/act)** is for deploying the API for remote debugging
 - Saas.Admin.Service.Tests - Unit tests for the API.
 
 ## Dependencies
 
 The service depends on:
 
-- The **Identity Foundation** that was deployed a spart of the Identity Foundation and on the [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/use-the-api).
+- The **Identity Foundation** that was deployed as part of the Identity Foundation and on the [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/use-the-api).
 - The **[SaaS Permissions Services API](./../Saas.Identity/Saas.Permissions/readme.md)**.
 - The [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/overview). 
 
@@ -43,7 +43,7 @@ Now you're ready to move on.
 
 ## How to Run Locally
 
-Guidelines for getting up and running with SaaS Signup Administration in your local development, are identical to the guidelines found the *[Requirements](./../Saas.Identity/Saas.Permissions/readme.md#Requirements)* and the *[Configuration, settings and secrets when running locally](./../Saas.Identity/Saas.Permissions/readme.md#running-the-saas-permissions-service-api-locally)* section in the [SaaS Permissions Service readme](./../Saas.Identity/Saas.Permissions/readme.md). 
+Guidelines for getting up and running with SaaS Sign up Administration in your local development, are identical to the guidelines found the *[Requirements](./../Saas.Identity/Saas.Permissions/readme.md#Requirements)* and the *[Configuration, settings and secrets when running locally](./../Saas.Identity/Saas.Permissions/readme.md#running-the-saas-permissions-service-api-locally)* section in the [SaaS Permissions Service readme](./../Saas.Identity/Saas.Permissions/readme.md). 
 
 ## Running the SaaS Administration Service API Locally
 

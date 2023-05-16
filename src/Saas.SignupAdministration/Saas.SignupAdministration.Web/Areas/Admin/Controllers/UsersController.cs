@@ -54,7 +54,7 @@ public class UsersController : Controller
 
         if (!Guid.TryParse(addUserRequest.TenantId, out var userTenantId)) 
         {
-            throw new ArgumentException($"The added user tenant id value is invalid '{addUserRequest.TenantId}'. Vakue must be a guid. ");
+            throw new ArgumentException($"The added user tenant id value is invalid '{addUserRequest.TenantId}'. Value must be a guid. ");
         }
 
         if (ModelState.IsValid 
