@@ -1,3 +1,8 @@
 
 ### Backup to Azure Blob Storage ###
 Backing up logs in '/asdk/src/Saas.Identity/Saas.IdentityProvider/deployment/log/2023-05-21--14-02-08' to Azure Blob Storage 'stasdktestr6e7/blob-asdk-test-r6e7'.
+# 
+
+### Deployment script completion ###
+Identity Foundation deployed with errors. Sometimes this is due to an error happening with the Azure Resource Manager. Try running the script once more to see if it continues past the point of failure.
+# Please review the log file for more details: /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment/log/2023-05-21--14-02-08
