@@ -3,4 +3,4 @@
 ##identity-bicep-parameters.json
 ##main-bicep-parameters.json
 *.bak
-certificate-policy.json
+## certificate-policy.json
