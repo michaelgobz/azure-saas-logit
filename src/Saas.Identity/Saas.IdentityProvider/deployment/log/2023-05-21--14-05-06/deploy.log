@@ -1,0 +1,66 @@
+
+### Welcome ###
+Welcome to the Azure SaaS Dev Kit - Azure B2C Identity Provider deployment script.
+
+### Preparing ###
+Working in directory /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment.
+
+### Sudo ###
+Please log in with sudo to run this script.
+
+### Checking prerequisites ###
+Checking prerequisites...
+
+### Checking OS ###
+Supported operating system: linux
+
+### Checking Repo forked ###
+Forked repository true: michaelgobz/azure-saas-logit
+
+### Checking bash version ###
+Pass: '5.1.16(1)-release > 5.0.0'
+
+### Checking az cli version ###
+Pass: '2.48.1 > 2.46.0'
+
+### Checking jq version ###
+Pass: '1.6 > 1.5'
+
+### Configation Settings ###
+Initializing Configuration
+
+### Backup Configuration ###
+Backing up existing configuration file to: /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment/log/2023-05-21--14-05-06/config.begin.json
+# Configuration settings: /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment/config/config.json.
+
+### Postfix ###
+Using existing postfix to continue or patch existing deployment: r6e7
+
+### Configuration Validation ###
+Validating Initial Configuration Settings...
+# All required initial configuration settings exist.
+
+### Login to Azure ###
+Log into you Azure tenant
+# Setting account subscription to d8d41247-cc7c-4efc-a0c6-335561c60f8b.
+# 
+# You are logged in to tenant: 64672ee1-084a-4ef8-acd6-ffe55046ded9.
+
+### Critical error ###
+Initilization failed
+
+### Configuration Validation ###
+Validating Initial Configuration Settings...
+# All required initial configuration settings exist.
+
+### Cleaning up ###
+Starting cleaning up...
+# Deleting locally stored service principal credentials.
+# Deleting service principal credentials using user 'asdk-usr-b2c-r6e7'
+# Deleting service principal credentials for 32d93cdb-70b8-4e75-bb6d-cd908d94a3ed.
+# Unable to delete service principal for 32d93cdb-70b8-4e75-bb6d-cd908d94a3ed, please delete it manually.
+# No service principal credentials to delete.
+# Service principal credentials have been removed locally and in Azure AD.
+# User context for asdk-usr-sp-r6e7 have been deleted.
+# User context for asdk-usr-b2c-r6e7 have been deleted.
+# Clean up has completed.

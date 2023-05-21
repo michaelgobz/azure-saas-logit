@@ -1,0 +1,356 @@
+{
+  "initConfig": {
+    "userPrincipalId": "c44b2cb4-f849-4568-b405-d0ee97312f51",
+    "subscriptionId": "d8d41247-cc7c-4efc-a0c6-335561c60f8b",
+    "tenantId": "64672ee1-084a-4ef8-acd6-ffe55046ded9",
+    "location": " eastus",
+    "naming": {
+      "solutionPrefix": "asdk",
+      "solutionName": "test"
+    },
+    "azureb2c": {
+      "location": "Europe",
+      "countryCode": "UG",
+      "skuName": "PremiumP1",
+      "tier": "A0"
+    }
+  },
+  "version": "0.8.0",
+  "environment": "Production",
+  "git": {
+    "branch": "azureB2B",
+    "repo": "https://github.com/michaelgobz/azure-saas-logit.git",
+    "orgProjectName": "michaelgobz/azure-saas-logit"
+  },
+  "oidc": {
+    "name": "oidc-workflow-asdk-test-r6e7",
+    "objectId": null,
+    "appId": null,
+    "assigneeObjectId": null,
+    "federation": {
+      "id": null
+    },
+    "credentials": {
+      "name": "oidc-credential-asdk-test-r6e7",
+      "issuer": "https://token.actions.githubusercontent.com",
+      "subject": null,
+      "description": "OIDC Workflow credentials for GitHub Actions for ASDK",
+      "audiences": [
+        "api://AzureADTokenExchange"
+      ]
+    }
+  },
+  "azureb2c": {
+    "signedOutCallBackPath": "/signout/B2C_1A_SIGNUP_SIGNIN",
+    "signUpSignInPolicyId": "B2C_1A_SIGNUP_SIGNIN",
+    "policyKeys": [
+      {
+        "name": "TokenSigningKeyContainer",
+        "options": "Generate",
+        "keyType": "RSA",
+        "keyUsage": "Signature"
+      },
+      {
+        "name": "TokenEncryptionKeyContainer",
+        "options": "Generate",
+        "keyType": "RSA",
+        "keyUsage": "Encryption"
+      },
+      {
+        "name": "RestApiKey",
+        "options": "Manual",
+        "hasSecret": true,
+        "keyUsage": "Signature",
+        "secretPath": "/root/asdk-usr-sp-r6e7/data/secrets/RestApiKey.secret"
+      }
+    ]
+  },
+  "claimToRoleTransformer": {
+    "authenticationType": "MyCustomRoleAuth",
+    "roleClaimType": "MyCustomRole",
+    "sourceClaimType": "permissions"
+  },
+  "appRegistrations": [
+    {
+      "name": "admin-api",
+      "appServiceName": "admin-api-asdk-test-r6e7",
+      "certificate": false,
+      "redirectUri": null,
+      "redirectType": "web",
+      "applicationIdUri": "https://asdktestr6e7.onmicrosoft.com/admin-api",
+      "permissions": [
+        {
+          "grantAdminConsent": true,
+          "resourceId": "00000003-0000-0000-c000-000000000000",
+          "scopes": [
+            "openid",
+            "offline_access"
+          ]
+        }
+      ],
+      "baseUrl": "https://admin-api-asdk-test-r6e7.azurewebsites.net",
+      "appId": "14c1abdd-eaf5-43b0-a183-8b4735cddbc0",
+      "objectId": "f896f294-7a7d-4d1c-81c4-0e4454a5759e",
+      "scopes": [
+        {
+          "name": "tenant.read",
+          "description": "Read a customer's own Tenant data",
+          "guid": "df37a949-ee71-42ac-92fe-9a400492b23a"
+        },
+        {
+          "name": "tenant.global.read",
+          "description": "Admin-level read permissions for all Tenants",
+          "guid": "cfa161be-373a-4ebe-89f0-e0ee069defde"
+        },
+        {
+          "name": "tenant.write",
+          "description": "Alter a customer's own Tenant data",
+          "guid": "f8d8df9b-bdc4-4c3a-a683-467b285e049d"
+        },
+        {
+          "name": "tenant.global.write",
+          "description": "Admin-level write permissions for all Tenants",
+          "guid": "9e3eea4d-d12b-42b0-bc19-af07ec0795de"
+        },
+        {
+          "name": "tenant.delete",
+          "description": "Delete a customer's own Tenant data",
+          "guid": "0b493563-bbd5-4016-8b28-d8c1cef720d3"
+        },
+        {
+          "name": "tenant.global.delete",
+          "description": "Admin-level delete permissions for all Tenants",
+          "guid": "c8e84834-6825-4eb7-b92d-a0a1319307ab"
+        }
+      ]
+    },
+    {
+      "name": "signupadmin-app",
+      "appServiceName": "signupadmin-app-asdk-test-r6e7",
+      "certificate": true,
+      "hasSecret": true,
+      "redirectUri": "https://signupadmin-app-asdk-test-r6e7.azurewebsites.net/signin-oidc",
+      "redirectType": "web",
+      "logoutUri": "https://signupadmin-app-asdk-test-r6e7.azurewebsites.net/signout-oidc",
+      "appId": "26f7e73b-550d-4066-a71b-386071117429",
+      "objectId": "9a44bad2-47c6-4edb-80a4-e84145859b57",
+      "scopes": null,
+      "publicKeyPath": "/root/asdk-usr-b2c-r6e7/data/certs/cert-signupadmin-app.crt",
+      "secretPath": "/root/asdk-usr-b2c-r6e7/.secret/signupadmin-app.secret",
+      "certificateKeyName": "cert-signupadmin-app",
+      "permissions": [
+        {
+          "endpoint": "admin-api",
+          "scopes": [
+            "tenant.read",
+            "tenant.global.read",
+            "tenant.write",
+            "tenant.global.write",
+            "tenant.delete",
+            "tenant.global.delete"
+          ]
+        },
+        {
+          "grantAdminConsent": true,
+          "resourceId": "00000003-0000-0000-c000-000000000000",
+          "scopes": [
+            "openid",
+            "offline_access"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "saas-app",
+      "appServiceName": "saas-app-asdk-test-r6e7",
+      "certificate": true,
+      "hasSecret": true,
+      "redirectUri": "https://saas-app-asdk-test-r6e7.azurewebsites.net/signin-oidc",
+      "redirectType": "web",
+      "logoutUri": "https://saas-app-asdk-test-r6e7.azurewebsites.net/signout-oidc",
+      "appId": "1b1d3107-e964-454c-adf3-d1e09e4d9fc7",
+      "objectId": "a89a262b-6810-46bd-9db1-50cdb27f4ecc",
+      "scopes": null,
+      "publicKeyPath": "/root/asdk-usr-b2c-r6e7/data/certs/cert-saas-app.crt",
+      "secretPath": "/root/asdk-usr-b2c-r6e7/.secret/saas-app.secret",
+      "certificateKeyName": "cert-saas-app",
+      "permissions": [
+        {
+          "endpoint": "admin-api",
+          "scopes": [
+            "tenant.read"
+          ]
+        },
+        {
+          "grantAdminConsent": true,
+          "resourceId": "00000003-0000-0000-c000-000000000000",
+          "scopes": [
+            "openid",
+            "offline_access"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "permissions-api",
+      "baseUrl": "https://api-permission-asdk-test-r6e7.azurewebsites.net",
+      "appServiceName": "api-permission-asdk-test-r6e7",
+      "apiName": "api-permission-asdk-test-r6e7",
+      "appId": "a63e4bfd-a74e-48a4-9f25-220973bc416e",
+      "objectId": "9128030e-8146-4dcf-b7f7-cf3cf2b3b0c4",
+      "domain": null,
+      "certificate": true,
+      "redirectUri": null,
+      "redirectType": "web",
+      "permissionsApiUrl": "https://api-permission-asdk-test-r6e7.azurewebsites.net/api/CustomClaims/permissions",
+      "rolesApiUrl": "https://api-permission-asdk-test-r6e7.azurewebsites.net/api/CustomClaims/roles",
+      "publicKeyPath": "/root/asdk-usr-b2c-r6e7/data/certs/cert-permissions-api.crt",
+      "certificateKeyName": "cert-permissions-api",
+      "scopes": null,
+      "permissions": [
+        {
+          "grantAdminConsent": true,
+          "resourceId": "00000003-0000-0000-c000-000000000000",
+          "scopes": [
+            "openid",
+            "offline_access"
+          ],
+          "appRoles": [
+            "User.Read.All",
+            "Application.ReadWrite.OwnedBy"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IdentityExperienceFramework",
+      "certificate": false,
+      "redirectUri": "https://asdktestr6e7.b2clogin.com/asdktestr6e7.onmicrosoft.com",
+      "redirectType": "web",
+      "setAccessTokenAcceptedVersionToOne": true,
+      "appId": "91917684-c647-4881-8206-6145c99c7b33",
+      "objectId": "67eba71c-2e46-4819-b762-907d26847ed4",
+      "idTokens": true,
+      "signInAudience": "single",
+      "applicationIdUri": "https://asdktestr6e7.onmicrosoft.com/identityexperienceframework",
+      "scopes": [
+        {
+          "name": "user_impersonation",
+          "description": "Access Identity Experience Framework",
+          "guid": "aa678df8-970b-4c94-871c-b5fded8d0664"
+        }
+      ],
+      "permissions": [
+        {
+          "grantAdminConsent": true,
+          "resourceId": "00000003-0000-0000-c000-000000000000",
+          "scopes": [
+            "openid",
+            "offline_access"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProxyIdentityExperienceFramework",
+      "certificate": false,
+      "redirectUri": "myapp://auth",
+      "redirectType": "publicClient",
+      "setAccessTokenAcceptedVersionToOne": true,
+      "appId": "6b16fd3f-695d-41cd-a710-69e6a13f6458",
+      "objectId": "38bef9cc-64e7-4cd4-997b-bc0dde91d058",
+      "scopes": null,
+      "signInAudience": "single",
+      "isAllowPublicClientFlows": true,
+      "permissions": [
+        {
+          "endpoint": "IdentityExperienceFramework",
+          "scopes": [
+            "user_impersonation"
+          ]
+        },
+        {
+          "grantAdminConsent": true,
+          "resourceId": "00000003-0000-0000-c000-000000000000",
+          "scopes": [
+            "openid",
+            "offline_access"
+          ]
+        }
+      ]
+    }
+  ],
+  "sql": {
+    "sqlAdminLoginName": "sqlAdmin"
+  },
+  "deployment": {
+    "identityFoundation": {
+      "name": "IdentityFoundationDeployment",
+      "provisionState": "failed"
+    },
+    "adminServiceApi": {
+      "name": "AdminServiceAPIDeployment"
+    },
+    "signupAdministration": {
+      "name": "SignupAdmininstrationDeployment"
+    },
+    "permissionApi": {
+      "name": "PermissionApiDeployment"
+    },
+    "saasApp": {
+      "name": "SaaSApplicationDeployment"
+    },
+    "users": [
+      {
+        "name": "asdk-usr-b2c-r6e7",
+        "contextDir": "/root/asdk-usr-b2c-r6e7",
+        "certificateDir": "/root/asdk-usr-b2c-r6e7/data/certs"
+      },
+      {
+        "name": "asdk-usr-sp-r6e7",
+        "contextDir": "/root/asdk-usr-sp-r6e7",
+        "secretDir": "/root/asdk-usr-sp-r6e7/data/secrets",
+        "credentialsPath": "/root/asdk-usr-sp-r6e7/data/sp_credentials.pem"
+      }
+    ],
+    "azureCli": {
+      "configDir": "/root/.azure"
+    },
+    "postfix": "r6e7",
+    "devMachine": {
+      "ip": "20.51.245.170"
+    },
+    "storage": {
+      "name": "stasdktestr6e7",
+      "containerName": "blob-asdk-test-r6e7",
+      "provisionState": "successful"
+    },
+    "resourceGroup": {
+      "name": "rg-asdk-test-r6e7",
+      "provisionState": "successful"
+    },
+    "azureb2c": {
+      "displayName": "b2c-asdk-test-r6e7",
+      "domainName": "asdktestr6e7.onmicrosoft.com",
+      "name": "asdktestr6e7",
+      "username": "asdk-usr-b2c-r6e7",
+      "servicePrincipal": {
+        "username": "asdk-usr-sp-r6e7",
+        "appId": "32d93cdb-70b8-4e75-bb6d-cd908d94a3ed"
+      },
+      "provisionState": "successful",
+      "configuration": {
+        "provisionState": "successful"
+      },
+      "tenantId": "0cc9fb60-7050-4ba7-981c-ce1d6674c77d",
+      "instance": "https://asdktestr6e7.b2clogin.com"
+    },
+    "keyVault": {
+      "name": "kv-asdk-test-r6e7",
+      "key": {
+        "name": "key-asdk-test-r6e7"
+      },
+      "provisionState": "successful"
+    }
+  }
+}
