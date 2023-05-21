@@ -1,0 +1,8 @@
+
+### SaaS Administration Service API ###
+Provisioning the SaaS Administration Service API...
+# The file /asdk/src/Saas.Identity/Saas.Permissions/deployment/Bicep/Parameters/app-service-parameters.json does not exist, creating it now
+# Downloading Identity Foundation outputs from Resource Group 'null' deployment named 'IdentityFoundationDeployment'...
+
+### Critical Error ###
+Failed to get Identity Bicep deployment output parameters

@@ -1,0 +1,889 @@
+
+### Welcome ###
+Welcome to the Azure SaaS Dev Kit - Azure B2C Identity Provider deployment script.
+
+### Preparing ###
+Working in directory /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment.
+
+### Sudo ###
+Please log in with sudo to run this script.
+
+### Checking prerequisites ###
+Checking prerequisites...
+
+### Checking OS ###
+Supported operating system: linux
+
+### Checking Repo forked ###
+Forked repository true: michaelgobz/azure-saas-logit
+
+### Checking bash version ###
+Pass: '5.1.16(1)-release > 5.0.0'
+
+### Checking az cli version ###
+Pass: '2.48.1 > 2.46.0'
+
+### Checking jq version ###
+Pass: '1.6 > 1.5'
+
+### Configation Settings ###
+Initializing Configuration
+
+### Backup Configuration ###
+Backing up existing configuration file to: /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment/log/2023-05-21--12-56-34/config.begin.json
+# Configuration settings: /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment/config/config.json.
+
+### Postfix ###
+Creating new postfix: null
+# The unique postfix 'r6e7' will be used for naming resources.
+
+### Configuration Validation ###
+Validating Initial Configuration Settings...
+# All required initial configuration settings exist.
+
+### Login to Azure ###
+Log into you Azure tenant
+# Setting account subscription to d8d41247-cc7c-4efc-a0c6-335561c60f8b.
+# 
+# You are logged in to tenant: 64672ee1-084a-4ef8-acd6-ffe55046ded9.
+
+### Azure CLI ###
+Preserving Azure CLI context
+# User context for 'asdk-usr-b2c-r6e7' have been created.
+# User context for 'asdk-usr-sp-r6e7' have been created.
+
+### Attention. ###
+Please don't go anywhere just yet. You may need to log into the Azure B2C tenant in a few minutes. Thank you.
+
+### Resource Group ###
+Provisioning resource group rg-asdk-test-r6e7...
+# Resource group rg-asdk-test-r6e7 provision complete.
+# Checking if storage account stasdktestr6e7 exists...
+
+### Creating storage account ###
+Provisioning storage account stasdktestr6e7...
+# {
+  "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Resources/deployments/StorageDeployment",
+  "location": null,
+  "name": "StorageDeployment",
+  "properties": {
+    "correlationId": "2f318195-f555-44fb-8070-c9d778b2cb3a",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7/blobServices/default",
+            "resourceGroup": "rg-asdk-test-r6e7",
+            "resourceName": "stasdktestr6e7/default",
+            "resourceType": "Microsoft.Storage/storageAccounts/blobServices"
+          }
+        ],
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7/blobServices/default/containers/blob-asdk-test-r6e7",
+        "resourceGroup": "rg-asdk-test-r6e7",
+        "resourceName": "stasdktestr6e7/default/blob-asdk-test-r6e7",
+        "resourceType": "Microsoft.Storage/storageAccounts/blobServices/containers"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7",
+            "resourceGroup": "rg-asdk-test-r6e7",
+            "resourceName": "stasdktestr6e7",
+            "resourceType": "Microsoft.Storage/storageAccounts"
+          }
+        ],
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7/blobServices/default",
+        "resourceGroup": "rg-asdk-test-r6e7",
+        "resourceName": "stasdktestr6e7/default",
+        "resourceType": "Microsoft.Storage/storageAccounts/blobServices"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7",
+            "resourceGroup": "rg-asdk-test-r6e7",
+            "resourceName": "stasdktestr6e7",
+            "resourceType": "Microsoft.Storage/storageAccounts"
+          }
+        ],
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7/providers/Microsoft.Authorization/roleAssignments/20052ed5-13ad-5ea7-b794-5f91799b0e52",
+        "resourceGroup": "rg-asdk-test-r6e7",
+        "resourceName": "20052ed5-13ad-5ea7-b794-5f91799b0e52",
+        "resourceType": "Microsoft.Authorization/roleAssignments"
+      }
+    ],
+    "duration": "PT27.7685222S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7",
+        "resourceGroup": "rg-asdk-test-r6e7"
+      },
+      {
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7/blobServices/default",
+        "resourceGroup": "rg-asdk-test-r6e7"
+      },
+      {
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7/blobServices/default/containers/blob-asdk-test-r6e7",
+        "resourceGroup": "rg-asdk-test-r6e7"
+      },
+      {
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Storage/storageAccounts/stasdktestr6e7/providers/Microsoft.Authorization/roleAssignments/20052ed5-13ad-5ea7-b794-5f91799b0e52",
+        "resourceGroup": "rg-asdk-test-r6e7"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "location": {
+        "type": "String",
+        "value": "westus2"
+      },
+      "storageAccountName": {
+        "type": "String",
+        "value": "stasdktestr6e7"
+      },
+      "storageContainerName": {
+        "type": "String",
+        "value": "blob-asdk-test-r6e7"
+      },
+      "userPrincipalId": {
+        "type": "String",
+        "value": "c44b2cb4-f849-4568-b405-d0ee97312f51"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Storage",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "storageAccounts/blobServices/containers",
+            "zoneMappings": null
+          },
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "storageAccounts/blobServices",
+            "zoneMappings": null
+          },
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              "westus2"
+            ],
+            "properties": null,
+            "resourceType": "storageAccounts",
+            "zoneMappings": null
+          }
+        ]
+      },
+      {
+        "id": null,
+        "namespace": "Microsoft.Authorization",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "roleAssignments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "13931761892552035501",
+    "templateLink": null,
+    "timestamp": "2023-05-21T12:57:28.517866+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "rg-asdk-test-r6e7",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
+# Creating 'log' directory in blob-asdk-test-r6e7...
+# {
+  "content_length": 0,
+  "continuation": null,
+  "date": "2023-05-21T12:57:33+00:00",
+  "encryption_key_sha256": null,
+  "etag": "\"0x8DB59FAF2542100\"",
+  "last_modified": "2023-05-21T12:57:34+00:00",
+  "request_id": "34e4a51e-201f-0055-66e3-8bf65b000000",
+  "request_server_encrypted": true,
+  "version": "2021-08-06"
+}
+# Storage account stasdktestr6e7 created successfully.
+
+### Key Vault ###
+Provisioning Key Vault...
+# Checking if the Key Vault have already been successfully created...
+# No Key Vault found.
+# Deploying Key Vault using bicep...
+# {
+  "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.Resources/deployments/KeyVaultDeployment",
+  "location": null,
+  "name": "KeyVaultDeployment",
+  "properties": {
+    "correlationId": "33ad486e-27c5-44b7-96d5-3e123b212fb2",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7",
+            "resourceGroup": "rg-asdk-test-r6e7",
+            "resourceName": "kv-asdk-test-r6e7",
+            "resourceType": "Microsoft.KeyVault/vaults"
+          }
+        ],
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7/providers/Microsoft.Authorization/roleAssignments/50ffefc7-86b6-5bc0-9d5d-1a444502e370",
+        "resourceGroup": "rg-asdk-test-r6e7",
+        "resourceName": "50ffefc7-86b6-5bc0-9d5d-1a444502e370",
+        "resourceType": "Microsoft.Authorization/roleAssignments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7",
+            "resourceGroup": "rg-asdk-test-r6e7",
+            "resourceName": "kv-asdk-test-r6e7",
+            "resourceType": "Microsoft.KeyVault/vaults"
+          }
+        ],
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7/providers/Microsoft.Authorization/roleAssignments/d93bf5cf-0987-5fa5-b529-0bdf5a34473c",
+        "resourceGroup": "rg-asdk-test-r6e7",
+        "resourceName": "d93bf5cf-0987-5fa5-b529-0bdf5a34473c",
+        "resourceType": "Microsoft.Authorization/roleAssignments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7",
+            "resourceGroup": "rg-asdk-test-r6e7",
+            "resourceName": "kv-asdk-test-r6e7",
+            "resourceType": "Microsoft.KeyVault/vaults"
+          }
+        ],
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7/providers/Microsoft.Authorization/roleAssignments/4c1cc298-41ad-557f-81c6-f7394c58c516",
+        "resourceGroup": "rg-asdk-test-r6e7",
+        "resourceName": "4c1cc298-41ad-557f-81c6-f7394c58c516",
+        "resourceType": "Microsoft.Authorization/roleAssignments"
+      }
+    ],
+    "duration": "PT30.8616282S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7",
+        "resourceGroup": "rg-asdk-test-r6e7"
+      },
+      {
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7/providers/Microsoft.Authorization/roleAssignments/4c1cc298-41ad-557f-81c6-f7394c58c516",
+        "resourceGroup": "rg-asdk-test-r6e7"
+      },
+      {
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7/providers/Microsoft.Authorization/roleAssignments/50ffefc7-86b6-5bc0-9d5d-1a444502e370",
+        "resourceGroup": "rg-asdk-test-r6e7"
+      },
+      {
+        "id": "/subscriptions/d8d41247-cc7c-4efc-a0c6-335561c60f8b/resourceGroups/rg-asdk-test-r6e7/providers/Microsoft.KeyVault/vaults/kv-asdk-test-r6e7/providers/Microsoft.Authorization/roleAssignments/d93bf5cf-0987-5fa5-b529-0bdf5a34473c",
+        "resourceGroup": "rg-asdk-test-r6e7"
+      }
+    ],
+    "outputs": null,
+    "parameters": {
+      "keyVaultName": {
+        "type": "String",
+        "value": "kv-asdk-test-r6e7"
+      },
+      "location": {
+        "type": "String",
+        "value": "westus2"
+      },
+      "tenantId": {
+        "type": "String",
+        "value": "64672ee1-084a-4ef8-acd6-ffe55046ded9"
+      },
+      "userObjectId": {
+        "type": "String",
+        "value": "c44b2cb4-f849-4568-b405-d0ee97312f51"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.KeyVault",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              "westus2"
+            ],
+            "properties": null,
+            "resourceType": "vaults",
+            "zoneMappings": null
+          }
+        ]
+      },
+      {
+        "id": null,
+        "namespace": "Microsoft.Authorization",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "roleAssignments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "9724951777811509960",
+    "templateLink": null,
+    "timestamp": "2023-05-21T12:58:14.294864+00:00",
+    "validatedResources": null
+  },
+  "resourceGroup": "rg-asdk-test-r6e7",
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}
+# Key Vault Provisining successfully.
+
+### Key Vault Certificates and Secrets ###
+Getting and/or creating app certificates and secrets...
+# Creating a self-signing certificate called 'cert-signupadmin-app'...
+# Downloading self-signing public key certificate for cert-signupadmin-app...
+# Creating a self-signing certificate called 'cert-saas-app'...
+# Downloading self-signing public key certificate for cert-saas-app...
+# Creating a self-signing certificate called 'cert-permissions-api'...
+# Downloading self-signing public key certificate for cert-permissions-api...
+# Uploading new secret for RestApiKey...
+# Key Vault Certificats and Secrets Completed Successfully
+
+### Azure B2C Tenant ###
+Provisioning Azure B2C...
+# No B2C directory found.
+# Deploying Azure AD B2C Directory using bicep...
+# Provisionning of Azure B2C tenant Successful.
+
+### Azure B2C Tenant Login ###
+Logging into B2C tenant asdktestr6e7.onmicrosoft.com.
+# You are not currently logged in to the Azure B2C tenant: asdktestr6e7.onmicrosoft.com.
+# Please be patient, it sometimes take a little while for the login prompt to appear...
+# You must be logged into your Azure B2C tenant to continue.
+
+### Caching az cli session ###
+Caching enabled: 'true' for current user: 'asdk-usr-b2c-r6e7'
+# Azure B2C tenant login successful.
+
+### Azure B2C App Registrations ###
+Adding app registrations to Azure B2C tenant.
+
+### Azure B2C Instance ###
+Setting instance asdktestr6e7.b2clogin.com
+
+### admin-api ###
+Provisioning app registration for: admin-api...
+# Creating app registration without redirect uri
+# App created: {
+  "AppId": "14c1abdd-eaf5-43b0-a183-8b4735cddbc0",
+  "Id": "f896f294-7a7d-4d1c-81c4-0e4454a5759e"
+}
+# Adding identifier uri for: admin-api...
+# Identifier added: https://asdktestr6e7.onmicrosoft.com/admin-api
+# Adding 6 permission scopes to for admin-api.
+# Created new scope guid for scope: 'tenant.read' : 'df37a949-ee71-42ac-92fe-9a400492b23a'
+# Created new scope guid for scope: 'tenant.global.read' : 'cfa161be-373a-4ebe-89f0-e0ee069defde'
+# Created new scope guid for scope: 'tenant.write' : 'f8d8df9b-bdc4-4c3a-a683-467b285e049d'
+# Created new scope guid for scope: 'tenant.global.write' : '9e3eea4d-d12b-42b0-bc19-af07ec0795de'
+# Created new scope guid for scope: 'tenant.delete' : '0b493563-bbd5-4016-8b28-d8c1cef720d3'
+# Created new scope guid for scope: 'tenant.global.delete' : 'c8e84834-6825-4eb7-b92d-a0a1319307ab'
+# 
+# Permissions added for: admin-api
+# Creating service principal for: admin-api...
+# Adding required resource access for: admin-api...
+# Resource id: '00000003-0000-0000-c000-000000000000'
+# Is custom resource: 'false'
+# Permission scopes: '[
+  "openid",
+  "offline_access"
+]'
+# Adding scope name: 'openid', Scope guid: '37f7f235-527c-4136-accd-4a02d197296e'
+# Adding scope name: 'offline_access', Scope guid: '7427e0e9-2fba-42fe-b0c0-848c9e6a8182'
+# Required Resource Accesses request: '[
+  {
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+      {
+        "id": "37f7f235-527c-4136-accd-4a02d197296e",
+        "type": "Scope"
+      },
+      {
+        "id": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+        "type": "Scope"
+      }
+    ]
+  }
+]'
+# 
+# Waiting 60 seconds to allow the permissions to propagate before granting admin consent.
+# Granting admin consent
+# 
+# Required resource access added for: admin-api
+
+### signupadmin-app ###
+Provisioning app registration for: signupadmin-app...
+# Creating app with web redirect_uri: https://signupadmin-app-asdk-test-r6e7.azurewebsites.net/signin-oidc
+# App created: {
+  "AppId": "26f7e73b-550d-4066-a71b-386071117429",
+  "Id": "9a44bad2-47c6-4edb-80a4-e84145859b57"
+}
+# Adding logout url: 'https://signupadmin-app-asdk-test-r6e7.azurewebsites.net/signout-oidc' for app with id '26f7e73b-550d-4066-a71b-386071117429'.
+# 
+# Adding public key certificate for: signupadmin-app...
+# {
+  "appId": "26f7e73b-550d-4066-a71b-386071117429",
+  "password": null,
+  "tenant": "0cc9fb60-7050-4ba7-981c-ce1d6674c77d"
+}
+# Certificate added for: signupadmin-app
+# Adding secret for: signupadmin-app...
+# Secret added for: signupadmin-app
+# Adding required resource access for: signupadmin-app...
+# Resource id: '14c1abdd-eaf5-43b0-a183-8b4735cddbc0'
+# Is custom resource: 'true'
+# Permission scopes: '[
+  "tenant.read",
+  "tenant.global.read",
+  "tenant.write",
+  "tenant.global.write",
+  "tenant.delete",
+  "tenant.global.delete"
+]'
+# Adding scope name: 'tenant.read', Scope guid: 'df37a949-ee71-42ac-92fe-9a400492b23a'
+# Adding scope name: 'tenant.global.read', Scope guid: 'cfa161be-373a-4ebe-89f0-e0ee069defde'
+# Adding scope name: 'tenant.write', Scope guid: 'f8d8df9b-bdc4-4c3a-a683-467b285e049d'
+# Adding scope name: 'tenant.global.write', Scope guid: '9e3eea4d-d12b-42b0-bc19-af07ec0795de'
+# Adding scope name: 'tenant.delete', Scope guid: '0b493563-bbd5-4016-8b28-d8c1cef720d3'
+# Adding scope name: 'tenant.global.delete', Scope guid: 'c8e84834-6825-4eb7-b92d-a0a1319307ab'
+# Resource id: '00000003-0000-0000-c000-000000000000'
+# Is custom resource: 'false'
+# Permission scopes: '[
+  "openid",
+  "offline_access"
+]'
+# Adding scope name: 'openid', Scope guid: '37f7f235-527c-4136-accd-4a02d197296e'
+# Adding scope name: 'offline_access', Scope guid: '7427e0e9-2fba-42fe-b0c0-848c9e6a8182'
+# Required Resource Accesses request: '[
+  {
+    "resourceAppId": "14c1abdd-eaf5-43b0-a183-8b4735cddbc0",
+    "resourceAccess": [
+      {
+        "id": "df37a949-ee71-42ac-92fe-9a400492b23a",
+        "type": "Scope"
+      },
+      {
+        "id": "cfa161be-373a-4ebe-89f0-e0ee069defde",
+        "type": "Scope"
+      },
+      {
+        "id": "f8d8df9b-bdc4-4c3a-a683-467b285e049d",
+        "type": "Scope"
+      },
+      {
+        "id": "9e3eea4d-d12b-42b0-bc19-af07ec0795de",
+        "type": "Scope"
+      },
+      {
+        "id": "0b493563-bbd5-4016-8b28-d8c1cef720d3",
+        "type": "Scope"
+      },
+      {
+        "id": "c8e84834-6825-4eb7-b92d-a0a1319307ab",
+        "type": "Scope"
+      }
+    ]
+  },
+  {
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+      {
+        "id": "37f7f235-527c-4136-accd-4a02d197296e",
+        "type": "Scope"
+      },
+      {
+        "id": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+        "type": "Scope"
+      }
+    ]
+  }
+]'
+# 
+# Waiting 60 seconds to allow the permissions to propagate before granting admin consent.
+# Granting admin consent
+# 
+# Required resource access added for: signupadmin-app
+
+### saas-app ###
+Provisioning app registration for: saas-app...
+# Creating app with web redirect_uri: https://saas-app-asdk-test-r6e7.azurewebsites.net/signin-oidc
+# App created: {
+  "AppId": "1b1d3107-e964-454c-adf3-d1e09e4d9fc7",
+  "Id": "a89a262b-6810-46bd-9db1-50cdb27f4ecc"
+}
+# Adding logout url: 'https://saas-app-asdk-test-r6e7.azurewebsites.net/signout-oidc' for app with id '1b1d3107-e964-454c-adf3-d1e09e4d9fc7'.
+# 
+# Adding public key certificate for: saas-app...
+# {
+  "appId": "1b1d3107-e964-454c-adf3-d1e09e4d9fc7",
+  "password": null,
+  "tenant": "0cc9fb60-7050-4ba7-981c-ce1d6674c77d"
+}
+# Certificate added for: saas-app
+# Adding secret for: saas-app...
+# Secret added for: saas-app
+# Adding required resource access for: saas-app...
+# Resource id: '14c1abdd-eaf5-43b0-a183-8b4735cddbc0'
+# Is custom resource: 'true'
+# Permission scopes: '[
+  "tenant.read"
+]'
+# Adding scope name: 'tenant.read', Scope guid: 'df37a949-ee71-42ac-92fe-9a400492b23a'
+# Resource id: '00000003-0000-0000-c000-000000000000'
+# Is custom resource: 'false'
+# Permission scopes: '[
+  "openid",
+  "offline_access"
+]'
+# Adding scope name: 'openid', Scope guid: '37f7f235-527c-4136-accd-4a02d197296e'
+# Adding scope name: 'offline_access', Scope guid: '7427e0e9-2fba-42fe-b0c0-848c9e6a8182'
+# Required Resource Accesses request: '[
+  {
+    "resourceAppId": "14c1abdd-eaf5-43b0-a183-8b4735cddbc0",
+    "resourceAccess": [
+      {
+        "id": "df37a949-ee71-42ac-92fe-9a400492b23a",
+        "type": "Scope"
+      }
+    ]
+  },
+  {
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+      {
+        "id": "37f7f235-527c-4136-accd-4a02d197296e",
+        "type": "Scope"
+      },
+      {
+        "id": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+        "type": "Scope"
+      }
+    ]
+  }
+]'
+# 
+# Waiting 60 seconds to allow the permissions to propagate before granting admin consent.
+# Granting admin consent
+# 
+# Required resource access added for: saas-app
+
+### permissions-api ###
+Provisioning app registration for: permissions-api...
+# Creating app registration without redirect uri
+# App created: {
+  "AppId": "a63e4bfd-a74e-48a4-9f25-220973bc416e",
+  "Id": "9128030e-8146-4dcf-b7f7-cf3cf2b3b0c4"
+}
+# Adding public key certificate for: permissions-api...
+# {
+  "appId": "a63e4bfd-a74e-48a4-9f25-220973bc416e",
+  "password": null,
+  "tenant": "0cc9fb60-7050-4ba7-981c-ce1d6674c77d"
+}
+# Certificate added for: permissions-api
+# Adding required resource access for: permissions-api...
+# Resource id: '00000003-0000-0000-c000-000000000000'
+# Is custom resource: 'false'
+# Permission scopes: '[
+  "openid",
+  "offline_access"
+]'
+# Adding scope name: 'openid', Scope guid: '37f7f235-527c-4136-accd-4a02d197296e'
+# Adding scope name: 'offline_access', Scope guid: '7427e0e9-2fba-42fe-b0c0-848c9e6a8182'
+# Permission app roles: [
+  "User.Read.All",
+  "Application.ReadWrite.OwnedBy"
+]
+# App role name: 'User.Read.All', App role guid: 'df021288-bdef-4463-88db-98f22de89214'
+# App role name: 'Application.ReadWrite.OwnedBy', App role guid: '18a4783c-866b-4cc7-a460-3d5e5662c884'
+# Required Resource Accesses request: '[
+  {
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+      {
+        "id": "37f7f235-527c-4136-accd-4a02d197296e",
+        "type": "Scope"
+      },
+      {
+        "id": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+        "type": "Scope"
+      },
+      {
+        "id": "df021288-bdef-4463-88db-98f22de89214",
+        "type": "Role"
+      },
+      {
+        "id": "18a4783c-866b-4cc7-a460-3d5e5662c884",
+        "type": "Role"
+      }
+    ]
+  }
+]'
+# 
+# Waiting 60 seconds to allow the permissions to propagate before granting admin consent.
+# Granting admin consent
+# 
+# Required resource access added for: permissions-api
+
+### IdentityExperienceFramework ###
+Provisioning app registration for: IdentityExperienceFramework...
+# Creating app with web redirect_uri: https://asdktestr6e7.b2clogin.com/asdktestr6e7.onmicrosoft.com
+# App created: {
+  "AppId": "91917684-c647-4881-8206-6145c99c7b33",
+  "Id": "67eba71c-2e46-4819-b762-907d26847ed4"
+}
+# 
+# 
+# Setting accessTokenAcceptedVersion to null for: IdentityExperienceFramework...
+# 
+# Adding identifier uri for: IdentityExperienceFramework...
+# Identifier added: https://asdktestr6e7.onmicrosoft.com/identityexperienceframework
+# Adding 1 permission scopes to for IdentityExperienceFramework.
+# Created new scope guid for scope: 'user_impersonation' : 'aa678df8-970b-4c94-871c-b5fded8d0664'
+# 
+# Permissions added for: IdentityExperienceFramework
+# Creating service principal for: IdentityExperienceFramework...
+# Adding required resource access for: IdentityExperienceFramework...
+# Resource id: '00000003-0000-0000-c000-000000000000'
+# Is custom resource: 'false'
+# Permission scopes: '[
+  "openid",
+  "offline_access"
+]'
+# Adding scope name: 'openid', Scope guid: '37f7f235-527c-4136-accd-4a02d197296e'
+# Adding scope name: 'offline_access', Scope guid: '7427e0e9-2fba-42fe-b0c0-848c9e6a8182'
+# Required Resource Accesses request: '[
+  {
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+      {
+        "id": "37f7f235-527c-4136-accd-4a02d197296e",
+        "type": "Scope"
+      },
+      {
+        "id": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+        "type": "Scope"
+      }
+    ]
+  }
+]'
+# 
+# Waiting 60 seconds to allow the permissions to propagate before granting admin consent.
+# Granting admin consent
+# 
+# Required resource access added for: IdentityExperienceFramework
+
+### ProxyIdentityExperienceFramework ###
+Provisioning app registration for: ProxyIdentityExperienceFramework...
+# Creating app with public client redirect_uri: myapp://auth
+# App created: {
+  "AppId": "6b16fd3f-695d-41cd-a710-69e6a13f6458",
+  "Id": "38bef9cc-64e7-4cd4-997b-bc0dde91d058"
+}
+# 
+# 
+# Setting accessTokenAcceptedVersion to null for: ProxyIdentityExperienceFramework...
+# 
+# Adding required resource access for: ProxyIdentityExperienceFramework...
+# Resource id: '91917684-c647-4881-8206-6145c99c7b33'
+# Is custom resource: 'true'
+# Permission scopes: '[
+  "user_impersonation"
+]'
+# Adding scope name: 'user_impersonation', Scope guid: 'aa678df8-970b-4c94-871c-b5fded8d0664'
+# Resource id: '00000003-0000-0000-c000-000000000000'
+# Is custom resource: 'false'
+# Permission scopes: '[
+  "openid",
+  "offline_access"
+]'
+# Adding scope name: 'openid', Scope guid: '37f7f235-527c-4136-accd-4a02d197296e'
+# Adding scope name: 'offline_access', Scope guid: '7427e0e9-2fba-42fe-b0c0-848c9e6a8182'
+# Required Resource Accesses request: '[
+  {
+    "resourceAppId": "91917684-c647-4881-8206-6145c99c7b33",
+    "resourceAccess": [
+      {
+        "id": "aa678df8-970b-4c94-871c-b5fded8d0664",
+        "type": "Scope"
+      }
+    ]
+  },
+  {
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+      {
+        "id": "37f7f235-527c-4136-accd-4a02d197296e",
+        "type": "Scope"
+      },
+      {
+        "id": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+        "type": "Scope"
+      }
+    ]
+  }
+]'
+# 
+# Waiting 60 seconds to allow the permissions to propagate before granting admin consent.
+# Granting admin consent
+# 
+# Required resource access added for: ProxyIdentityExperienceFramework
+# Azure B2C app registrations have completed.
+# Adding secrets to KeyVault
+# Adding secret for signupadmin-app to KeyVault
+# Secret for signupadmin-app added to KeyVault
+# Adding secret for saas-app to KeyVault
+# Secret for saas-app added to KeyVault
+
+### Provisioning Service Principal for Policy Key Creation ###
+Provisioning or updating service principal for policy key creation: asdk-usr-sp-r6e7
+# Creating service principal for asdk-usr-sp-r6e7.
+# Waiting 60 seconds for service principal to propagate ...
+# Setting service principal permissions TrustFrameworkKeySet.ReadWrite.All, Policy.ReadWrite.TrustFramework
+# Assigning 'TrustFrameworkKeySet.ReadWrite.All' permissions to service principal...
+# Permission TrustFrameworkKeySet.ReadWrite.All set.
+# Assigning 'Policy.ReadWrite.TrustFramework' permissions to service principal...
+# Permission Policy.ReadWrite.TrustFramework set.
+# Resetting service principal credentials...
+# Service principal created or updated successfully. Waiting 60 seconds for letting it propagate...
+# Service principal update/creation completed.
+
+### Service Principal Login ###
+Logging in with service principal...
+# Running the B2C Policy Script script in the context of the user asdk-usr-sp-r6e7 to allow a seperate az cli login session with the B2C tenant.
+# Service principal login successful.
+
+### Policy Keys ###
+Provisioning Policy Keys
+# Policy key TokenSigningKeyContainer does not exist. Creating it now...
+# Generating policy key
+# Creating policy key-set 'TokenSigningKeyContainer' with body: {
+    "id": "B2C_1A_TokenSigningKeyContainer"
+} 
+# Generating policy key for 'TokenSigningKeyContainer' with option 'Generate'.
+# Policy key TokenEncryptionKeyContainer does not exist. Creating it now...
+# Generating policy key
+# Creating policy key-set 'TokenEncryptionKeyContainer' with body: {
+    "id": "B2C_1A_TokenEncryptionKeyContainer"
+} 
+# Generating policy key for 'TokenEncryptionKeyContainer' with option 'Generate'.
+# Policy key RestApiKey does not exist. Creating it now...
+# Adding manual policy key
+# Manual policy key has secret: true
+# Creating policy key-set 'RestApiKey' with body: {
+    "id": "B2C_1A_RestApiKey"
+} 
+# Generating policy key for 'RestApiKey' with option 'Manual'.
+# B2C policy configuration script has completed.
+# The file /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment/config/identity-bicep-parameters.json does not exist or is empty, creating it now
+
+### Generating Identity Foundation services parameters... ###
+
+# Provisioning 'IdentityFoundationDeployment' to resource group rg-asdk-test-r6e7...
+# 
+
+### Critical Error ###
+Failed to deploy Identity Foundation services
+
+### Critical error ###
+Deployment of Identity Provider failed.
+
+### Configuration Validation ###
+Validating Initial Configuration Settings...
+# All required initial configuration settings exist.
+
+### Cleaning up ###
+Starting cleaning up...
+# Deleting locally stored service principal credentials.
+# Deleting service principal credentials using user 'asdk-usr-b2c-r6e7'
+# Deleting service principal credentials for 32d93cdb-70b8-4e75-bb6d-cd908d94a3ed.
+# Deleting service principal credentials with keyId: 9ca14416-bc61-4512-8184-0ac0db38fbc5 for fc89c178-4f49-498f-93a0-412474e20d4f...
+# 
+# Service principal credentials have been removed locally and in Azure AD.
+# User context for asdk-usr-sp-r6e7 have been deleted.
+# User context for asdk-usr-b2c-r6e7 have been deleted.
+# Clean up has completed.

@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "version": {
+            "value": "0.8.0"
+        },
+        "environment": {
+            "value": "Production"
+        },
+        "devMachineIp": {
+            "value": "20.51.245.170"
+        },
+        "solutionPostfix": {
+            "value": "r6e7"
+        },
+        "solutionPrefix": {
+            "value": "asdk"
+        },
+        "solutionName": {
+            "value": "test"
+        },
+        "keyVaultName": {
+            "value": "kv-asdk-test-r6e7"
+        },
+        "permissionApiKey": {
+            "value": "RestApiKey"
+        },
+        "sqlAdministratorLogin": {
+            "value": "sqlAdmin"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+
+### Welcome ###
+Welcome to the Azure SaaS Dev Kit - Azure B2C Identity Provider deployment script.
+
+### Preparing ###
+Working in directory /asdk/src/Saas.Identity/Saas.IdentityProvider/deployment.
+
+### Sudo ###
+Please log in with sudo to run this script.
+
+### Checking prerequisites ###
+Checking prerequisites...
+
+### Checking OS ###
+Supported operating system: linux
+
+### Checking Repo forked ###
+Forked repository true: michaelgobz/azure-saas-logit
+
+### Checking bash version ###
+Pass: '5.1.16(1)-release > 5.0.0'
+
+### Checking az cli version ###
+Pass: '2.48.1 > 2.46.0'
+
+### Checking jq version ###
+Pass: '1.6 > 1.5'
+# It looks like this is the first time you're running this script. Setting things up...
+# Creating new './config/config.json' from 'config-template.json.'
+# Before beginning deployment you must specify initial configuration in the 'initConfig' object:
+# {
+  "userPrincipalId": "",
+  "subscriptionId": "",
+  "tenantId": "",
+  "location": "",
+  "naming": {
+    "solutionPrefix": "asdk",
+    "solutionName": "test"
+  },
+  "azureb2c": {
+    "location": "Europe",
+    "countryCode": "DK",
+    "skuName": "PremiumP1",
+    "tier": "A0"
+  }
+}
+# Please add required initial settings to the initConfig object in ./config/config.json and run this script again.

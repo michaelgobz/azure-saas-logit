@@ -1,0 +1,8 @@
+
+### SaaS Signup Administration ###
+Provisioning the SaaS Signup Administration web app...
+# The file /asdk/src/Saas.SignupAdministration/deployment/Bicep/Parameters/app-service-parameters.json does not exist, creating it now
+# Downloading Identity Foundation outputs from Resource Group 'null' deployment named 'IdentityFoundationDeployment'...
+
+### Critical Error ###
+Failed to get Identity Bicep deployment output parameters
