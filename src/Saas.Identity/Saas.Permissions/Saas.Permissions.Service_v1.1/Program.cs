@@ -149,6 +149,7 @@ void InitializeDevEnvironment()
     // For local development, use the Secret Manager feature of .NET to store a connection string
     // and likewise for storing a secret for the permission-api app. 
     // https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows
+    // the app config is must for this service to run locally
 
     var appConfigurationconnectionString = builder.Configuration.GetConnectionString("AppConfig")
         ?? throw new NullReferenceException("App config missing.");
